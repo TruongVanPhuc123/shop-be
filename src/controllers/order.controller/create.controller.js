@@ -50,10 +50,10 @@ const createOrder = catchAsync(async (req, res) => {
 
   if (status === "accepted") {
     await CartItem.deleteMany({ userId: currentUserId });
-  } else {
-    // Response
-    sendResponse(res, 201, true, orderCreated, null, "Create order success !");
   }
+
+  // Response
+  sendResponse(res, 201, true, orderCreated, null, "Create order success !");
 });
 
 module.exports = createOrder;
